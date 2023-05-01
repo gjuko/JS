@@ -1,28 +1,36 @@
-let myLeads = [];
-const inputEl = document.getElementById("input-el");
-const inputBtn = document.getElementById("input-btn");
-const ulEl = document.getElementById("ul-el");
+let myLeads = []
+const inputEl = document.getElementById("input-el")
+const inputBtn = document.getElementById("input-btn")
+const ulEl = document.getElementById("ul-el")
 
-inputEl.addEventListener("keydown", function(event) {
-    if (event.keyCode === 13) {
-        event.preventDefault(); // prevent the form from submitting
-        myLeads.push(inputEl.value);
-        inputEl.value = "";
-        renderLeads();
-    }
-});
+// Get the leads from the localStorage - PS: JSON.parse()
+// Store it in a variable, leadsFromLocalStorage
+// Log out the variable
+
+let leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") )
+
+console.log(leadsFromLocalStorage)
 
 inputBtn.addEventListener("click", function() {
-    myLeads.push(inputEl.value);
-    inputEl.value = "";
-    renderLeads();
-});
+    myLeads.push(inputEl.value)
+    inputEl.value = ""
+    localStorage.setItem("myLeads", JSON.stringify(myLeads) )
+    renderLeads()
+    
+    // To verify that it works:
+    console.log( localStorage.getItem("myLeads") )
+})
 
 function renderLeads() {
-    let listItems = "";
+    let listItems = ""
     for (let i = 0; i < myLeads.length; i++) {
-        // Wrap the checkbox in a <div> element with class="lead-item"
-        listItems += "<div class='lead-item'><input type='checkbox'>" + "<a href='" + myLeads[i] + "' target='_blank'>" + myLeads[i] + "</a></div>";
+        listItems += `
+            <li>
+                <a target='_blank' href='${myLeads[i]}'>
+                    ${myLeads[i]}
+                </a>
+            </li>
+        `
     }
-    ulEl.innerHTML = listItems;  
+    ulEl.innerHTML = listItems  
 }
