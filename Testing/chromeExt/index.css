@@ -17,21 +17,30 @@ button {
     background: #5f9341;
     color: white;
     padding: 10px 20px;
-    border: none;
+    border: 1px solid #5f9341;
     font-weight: bold;
 }
 
+/* Style the button according to the provided design */
+
+#delete-btn {
+    background: white;
+    color: #5f9341;
+
+}
 
 ul {
-    list-style: none; /* Remove the default bullet points */
-    margin: 0;
-    padding: 0;
+    margin-top: 20px;
+    list-style: none;
+    padding-left: 0;
 }
 
 li {
-    
+    margin-top: 5px;
 }
 
 a {
-    color: green; /* Set the text color to match the button */
+    color: #5f9341;
 }
+
+
