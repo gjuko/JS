@@ -1,0 +1,15 @@
+.main {
+    margin-top: 100px;
+}
+
+/* Challenge - part 2: 
+Replace the element selectors with class selectors */
+.logo-img {
+    display: block;
+    width: 300px;
+}
+
+.search-input {
+    display: block;
+    width: 400px;
+}
