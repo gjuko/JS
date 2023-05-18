@@ -1,0 +1,64 @@
+/**
+Palette: https://scrimba.com/links/hometown-palette
+RED: #E63946
+LIGHT: #F1FAEE
+AQUA: #A8DADC
+LIGHT BLUE: #457B9D
+DARK BLUE: #1D3557
+
+*/
+
+body {
+    margin: 0;
+    text-align: center;
+}
+
+
+.hero {
+    background-image: url("/Solo Projects/Hometown Homepage/images/Veles-glavna.jpeg");
+    background-size: cover;
+    background-position: center;
+    height: 370px;
+    font-size: 24px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.town-title {
+    font-size: 24px;
+    background-color: rgb(243, 227, 164);
+    text-shadow: 1px 1px 1px rgb(205, 145, 60);
+}
+
+.town-desc {
+    font-size: 24px;
+    background-color: rgb(28, 56, 241);
+    text-shadow: 1px 1px 1px rgba(17, 248, 9, 0.794);
+}
+
+.main-slogan {
+    font-size: 24px;
+}
+
+.activities-main {
+    background-size: cover;
+    background-position: center;
+    background-color: beige;
+    background-size: cover;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.acts {
+    border-radius: 50%;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100px;
+}
