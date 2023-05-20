@@ -13,52 +13,163 @@ body {
     text-align: center;
 }
 
+/* HERO SECTION */
 
 .hero {
     background-image: url("/Solo Projects/Hometown Homepage/images/Veles-glavna.jpeg");
     background-size: cover;
     background-position: center;
     height: 370px;
-    font-size: 24px;
     padding: 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-   
+    text-shadow: 1px 1px 1px black;
 }
 
 .town-title {
-    font-size: 24px;
-    background-color: rgb(243, 227, 164);
-    text-shadow: 1px 1px 1px rgb(205, 145, 60);
+    background: #293131;
+    color: #ffffff;
+    padding: 4px 12px 4px 12px;
+    border: 1px solid #AA727A;
+    border-radius: 10px;
+    margin-bottom: 0;
 }
 
 .town-desc {
-    font-size: 24px;
-    background-color: rgb(28, 56, 241);
-    text-shadow: 1px 1px 1px rgba(17, 248, 9, 0.794);
+    background: #2C4932;
+    color: #ffffff;
+    padding: 4px 15px 4px 15px;
+    border: 1px solid #AA727A;
+    border-radius: 10px;
+    margin-top: 15px;
+    max-width: 400px;
 }
 
-.main-slogan {
-    font-size: 24px;
+/* ACTIVITIES SECTION */
+
+
+.activity-main {
+    background: #f1dad6;
+    padding: 32px;
+    display: flex;
+    flex-direction: row;
+    color: #293131;
 }
 
-.activities-main {
-    background-size: cover;
-    background-position: center;
-    background-color: beige;
-    background-size: cover;
+.act-main-title {
+    font-family: Arial;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: center;
+    overflow-wrap: break-word;
+}
+
+.activities {
+    height: 378px;
+    background: #F1FAEE;
     display: flex;
     justify-content: space-around;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    justify-content: space-evenly;
+}
+
+.acts img {
+    width: 100px;
+    border-radius: 50%;
+    border: 2px solid #2C4932;
+    padding: 8px;
+    max-width: 320px;
     
 }
 
-.acts {
-    border-radius: 50%;
-    justify-content: space-around;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.acts img:hover {
+    border: 3px solid #579162;
+    transform: scale(1.6);
+    transition: transform 350ms, border 100ms;    
+}
+
+.theatre {
     width: 100px;
+    height: 99.34px;
+    left: 83px;
+    top: 114px;
+    
+}
+
+.iron-bridge {
+    width: 103.97px;
+    height: 103.97px;
+    left: 314px;
+    top: 113px;
+    overflow-wrap: break-word
+}
+
+.night-time {
+    width: 100.66px;
+    height: 100.66px;
+    left: 536.34px;
+    top: 113px;
+}
+
+/* GUIDE SECTION */
+
+.card {
+
+    width: 400px;
+    margin: 0 auto;
+    box-shadow: 0px 6px 0px #1D3557;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: Arial;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    color: #2b2839;
+    background: #A8DADC;
+    color: #126782;
+    
+}
+
+.avatar {
+    width: 150px;
+}
+
+.guide {
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    color: #1D3557;
+}
+
+.footer-middle {
+    font-family: 'Arial';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+}
+
+.guide-name {
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+    color: #1D3557;
+}
+
+.p {
+    overflow-wrap: anywhere;
 }
