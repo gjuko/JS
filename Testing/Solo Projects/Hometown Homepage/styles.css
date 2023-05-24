@@ -1,22 +1,13 @@
-/**
-Palette: https://scrimba.com/links/hometown-palette
-RED: #E63946
-LIGHT: #F1FAEE
-AQUA: #A8DADC
-LIGHT BLUE: #457B9D
-DARK BLUE: #1D3557
-
-*/
 
 body {
-    margin: 0;
+    background-color: #abf0c8;
     padding: 0;
     width: 720px;
-    height: 100vh;
     left: 0px;
     right: 0px;
     margin-left: auto;
     margin-right: auto;
+
 }
 
 /* HERO SECTION */
@@ -26,6 +17,7 @@ body {
     background-size: cover;
     background-position: center;
     display: flex;
+    width: auto;
     flex-direction: column;
     align-items: center;
     height: 370px;
@@ -59,25 +51,44 @@ body {
     display: flex;
     flex-direction: row;
     width: 720px;
-    height: 400px;
+    height: 538px;
     left: 0px;
-    right: 0px;
-    margin-left: auto;
-    margin-right: auto;
+    top: 343px;
     text-align: center;
+    justify-content: space-evenly;
+    font-family: 'Literata', serif;
+}
+
+.cool-acts {
+    font-family: Arial;
+    font-weight: 700;
+    font-size: 24px;
+    color: #1D3557;
+    margin-top: 39px;
 }
 
 .img-collection {
+    margin-top: 50px;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
   }
-  
+
 .img-select {
     width: 100px;
     height: 100px;
     border-radius: 50%;
+  }
+
+.img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    padding: 10px;
+    padding-bottom: 0px;
+    justify-content: space-between;
+
   }
 
 .img-select:hover {
@@ -85,24 +96,40 @@ body {
     transition: transform 350ms, border 100ms;    
 }
 
+.text {
+    border: 2px black solid;
+    border-radius: 40px;
+    padding: 3px;
+}
+
+.text:hover {
+    background-color: burlywood;
+}
 
 /* GUIDE SECTION */
 
-.card {
+.section {
+    background-color: white;
+    width: 720px;
+    height: 338px;
+    margin-top: 100px;
+    padding-top: 30px;
+}
 
-    width: 400px;
+.card {
+    width: 500px;
     box-shadow: 0px 10px 0px #1D3557;
-        padding-bottom: 20px;
-        padding-top: 20px;
-        border-radius: 10px;
-            font-family: Arial;
-            font-weight: 700;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-radius: 10px;
+    font-family: Arial;
+    font-weight: 700;
     display: flex;
     justify-content: space-around;
     color: #2b2839;
     background: #A8DADC;
     color: #126782;
-    margin-top: 170px;
+    /* margin-top:50px; */
     margin-bottom: 50px;
     margin-left: auto;
     margin-right: auto;
@@ -115,6 +142,8 @@ body {
     left: 173px;
     top: 73px;
     border-radius: 10px;
+    padding-left: 20px;
+
 }
 
 .guide {
@@ -137,6 +166,7 @@ body {
 }
 
 .guide-name {
+    padding-top: 50px;
     font-family: 'Arial';
     font-style: normal;
     font-weight: 700;
@@ -146,6 +176,3 @@ body {
     color: #1D3557;
 }
 
-.p {
-    overflow-wrap: anywhere;
-}
