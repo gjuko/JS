@@ -13,7 +13,7 @@ body {
 /* HERO SECTION */
 
 .hero {
-    background-image: url("/Solo Projects/Hometown Homepage/images/Veles-glavna.jpeg");
+    background-image: url("/images/Veles-glavna.jpeg");
     background-size: cover;
     background-position: center;
     display: flex;
