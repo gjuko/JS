@@ -32,6 +32,7 @@ body {
     border: 1px solid #AA727A;
     border-radius: 10px;
     margin-bottom: 0;
+    
 }
 
 .town-desc {
@@ -92,19 +93,10 @@ body {
   }
 
 .img-select:hover {
-    transform: scale(1.4);
+    transform: scale(.2);
     transition: transform 350ms, border 100ms;    
 }
 
-.text {
-    border: 2px black solid;
-    border-radius: 40px;
-    padding: 3px;
-}
-
-.text:hover {
-    background-color: burlywood;
-}
 
 /* GUIDE SECTION */
 
