@@ -1,0 +1,118 @@
+
+
+body {
+    margin: 0;
+    text-align: center;
+    background-image: url("jordanhangar.webp");
+    background-size: cover;
+    display: block;
+
+}
+
+.container {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 50px;
+    width: 800px;
+    border: 4px white solid;
+    background-color: #1B244A;
+    background-image: url("bbboard.jpeg");
+    background-size: 700px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5%;
+}
+
+h3 {
+    color: #1B244A;
+    margin-top: 68px;
+    height: 36px;
+    width: 149px;
+    left: 85px;
+    top: 68px;
+    font-family: Verdana;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+
+#home-score {
+    background: black;
+    color: #F94F6D;
+    width: 155px;
+    height: 120px;
+    font-family: Cursed Timer ULiL;
+    font-size: 90px;
+    font-weight: 400;
+    line-height: 127px;
+    letter-spacing: 0em;
+    text-align: center;
+
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    background: #1B244A;
+    color: #9AABD8;
+    border: 2px solid;
+    width: 45px;
+    height: 45px;
+    left: 337px;
+    top: 271px;
+    border: 2px solid #9AABD8;
+    border-radius: 5px;
+    justify-content: space-around;
+}
+
+
+#guest-score {
+    background: black;
+    color: #F94F6D;
+    width: 155px;
+    height: 120px;
+    font-family: Cursed Timer ULiL;
+    font-size: 90px;
+    font-weight: 400;
+    line-height: 127px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+
+.guest-buttons {
+    box-sizing: border-box;
+    display: flex;
+    width: 45px;
+    height: 45px;
+    left: 337px;
+    top: 271px;
+    border: 2px solid #9AABD8;
+    border-radius: 5px;
+}
+
+#clear-button {
+    width: 100px;
+}
+
+#demo {
+        height: 20px;
+        width: 150;
+        display: flex;
+        font-size: 25px;
+        background-position: center;
+        /* padding-top: 245px; */
+        justify-content: center;
+}
+
+#timer {
+    font-size: 30px;
+    padding-top: 160px;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
