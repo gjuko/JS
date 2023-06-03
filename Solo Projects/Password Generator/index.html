@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <h1>Password Generator</h1>
+    <section class="container">
+        <div class="container-one">
+      
+            <h1 class="Password-title">Generate a<br>
+                <span class="multicolortext">random password</span></h1>
+            <h3>Never use an insecure password again.</h3>
+            <div class="GP1-button">
+                <button id="GeneratePasswords-btn" class="btn1" onclick="genPassword()">Generate passwords</button>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="includeSymbols" class="checkbox-input">
+                    <label class="checkbox-label" for="includeSymbols">Include Symbols</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="includeNumbers" class="checkbox-input">
+                    <label class="checkbox-label" for="includeNumbers">Include Numbers</label>
+                </div>
+                <div class="slider-container">
+                    <label class="slider-label" for="passwordLength">Password Length:</label>
+                    <input type="range" id="passwordLength" min="8" max="20" value="12" oninput="updatePasswordLength()" class="slider-input">
+                    <span id="passwordLengthValue" class="slider-value">12</span>
+                </div>
+            </div>
+            <hr class="hr">
+            <p id="copyMessage" class="copy-message"></p>
+            <input type="text" class="Win1-Pass-one" placeholder="" id="password1" readonly onclick="copyPassword()">
+            <input type="text" class="Win1-Pass-two" placeholder="" id="password2" readonly onclick="copyPassword1()">
+        </div>
+
+        <script src="index.js"></script>
+    </body>
+</html>
