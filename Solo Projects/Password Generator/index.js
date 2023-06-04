@@ -52,7 +52,7 @@ function copyPassword() {
   
     setTimeout(function() {
       copyMessage.style.display = "none";
-    }, 3000);
+    }, 1000);
   }
   
   function copyPassword() {
@@ -67,7 +67,7 @@ function copyPassword() {
   
     setTimeout(function() {
       copyMessage.style.display = "none";
-    }, 3000);
+    }, 1000);
   }
   
 
