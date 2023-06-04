@@ -23,6 +23,24 @@ body {
     height: 550px;
   }
 
+  .Password-title {
+    margin-left: 52px;
+    margin-bottom: 10px;
+    color: white;
+    font-family: Karla;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 40px;
+    letter-spacing: -0.025em;
+    text-align: left;
+    font-family: Inter;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 40px;
+    letter-spacing: -0.025em;
+    text-align: left;
+  }
+
   h3 {
     margin-left: 52px;
     margin-bottom: 51px;
