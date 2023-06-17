@@ -1,5 +1,3 @@
-
-
 html, body {
     margin: 0;
     padding: 0;
@@ -42,27 +40,19 @@ h3 {
     font-weight: 400;
     font-size: 20px;
     line-height: 20px;
-    margin-bottom: 6px;
 }
 
 .container{
-    justify-content: center;
     min-width: 390px;
-    padding: 2em 4em;
-    margin-left: auto;
-    margin-left: auto;
-    flex-direction: column;
     text-align: center;
-
+    padding: 2em 4em;
 }
 
 .main-input {
-    line-height: 20px;
     border: none;
     resize: none;
     width: 317px;
     height: 118px;
-    left: 36px;
     top: 202px;
     background: #444059;
     border-radius: 8px;
@@ -71,8 +61,9 @@ h3 {
     font-weight: 400;
     font-size: 15px;
     line-height: 18px;
-    color: #8F8F8F;
+    color: #8f8f8f;
     padding: 10px;
+    padding-bottom: 90px;
 }
 
 .fields {
@@ -83,7 +74,7 @@ h3 {
     gap: 0.6em;
 }
 
-.fields input{
+.fields input {
     width: 50%;
     text-align: center;
     background-color: #444059;
@@ -94,7 +85,7 @@ h3 {
     padding:  0.5em;
     width: 152.85px;
     height: 40px;
-    left: 38px;
+    left: 40px;
     top: 329px;
     font-family: 'Inter';
     font-style: normal;
@@ -122,14 +113,14 @@ button {
     border: none;
 }
 
-
-.endorsements-input {
-    margin-top: 15px;
+.endorsements-container {
+    user-select: none;
+    text-align: start;
     list-style-type: none;
-    width: 317px;
+    flex-direction: column;
+    margin-left: 33px;
+    width: 307px;
     height: 118px;
-    left: 36px;
-    top: 202px;
     background: white;
     border-radius: 8px;
     font-family: 'Inter';
@@ -139,4 +130,46 @@ button {
     line-height: 18px;
     color: black;
     padding: 10px;
+    margin-bottom: 15px;
+}
+
+
+.endorsements-input {
+    user-select: none;
+    text-align: start;
+    list-style-type: none;
+    flex-direction: column;
+    width: 286px;
+    height: 52.68px;
+    left: 50px;
+    top: 533.93px;
+    background: white;
+    border-radius: 8px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: black;
+    padding: 10px;
+}
+
+.endorsementTo {
+    text-align: start;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #1B1924;
+}
+
+.endorsementFrom {
+    text-align: start;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #1B1924;
 }
