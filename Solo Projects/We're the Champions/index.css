@@ -113,7 +113,7 @@ button {
     border: none;
 }
 
-.endorsements-container {
+.endorsements-container1 {
     user-select: none;
     text-align: start;
     list-style-type: none;
@@ -133,6 +133,45 @@ button {
     margin-bottom: 15px;
 }
 
+.endorsements-container2 {
+    user-select: none;
+    text-align: start;
+    list-style-type: none;
+    flex-direction: column;
+    margin-left: 33px;
+    width: 307px;
+    height: 118px;
+    background: white;
+    border-radius: 8px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: black;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.endorsements-container3 {
+    user-select: none;
+    text-align: start;
+    list-style-type: none;
+    flex-direction: column;
+    margin-left: 33px;
+    width: 307px;
+    height: 118px;
+    background: white;
+    border-radius: 8px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: black;
+    padding: 10px;
+    margin-bottom: 15px;
+}
 
 .endorsements-input {
     user-select: none;

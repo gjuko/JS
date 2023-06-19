@@ -50,20 +50,28 @@ publishBtn.addEventListener("click", function() {
     previousValue = inputValue;
 
     
+    
 
 
     // Update "To" and "From" values in the labels
     let Endorsement1FromField = document.querySelector('.endorsementTo1').innerHTML = "To: " + toValue;
     let Endorsement1ToField = document.querySelector('.endorsementFrom1').innerHTML = "From: " + fromValue;
 
-    let Endorsement2FromField = document.querySelector('.endorsementTo2').innerHTML = "To: " + Endorsement1FromField;
-    let Endorsement2ToField = document.querySelector('.endorsementFrom2').innerHTML = "From: " + Endorsement1ToField;
+    publishBtn.addEventListener("click", function() {
+        // Get the values from the "From" and "To" buttons of endorsements-container1
+        let endorsementFrom1 = document.querySelector('.endorsementFrom1').innerHTML;
+        let endorsementTo1 = document.querySelector('.endorsementTo1').innerHTML;
+    
+        // Move the values to endorsements-container2
+        document.querySelector('.endorsementFrom2').innerHTML = endorsementFrom1;
+        document.querySelector('.endorsementTo2').innerHTML = endorsementTo1;
 
-    let Endorsement3FromField = document.querySelector('.endorsementTo3').innerHTML = "To: " + Endorsement2ToField;
-    let Endorsement3ToField = document.querySelector('.endorsementFrom3').innerHTML = "From: " + Endorsement2FromField;
-
-    document.querySelector('.endorsementTo3').innerHTML = "To: " + tempToValue;
-    document.querySelector('.endorsementFrom3').innerHTML = "From: " + tempFromValue;
+        document.querySelector('.endorsementFrom3').innerHTML = endorsementFrom2;
+        document.querySelector('.endorsementTo3').innerHTML = endorsementTo2;
+    
+    
+    });
+    
 
 
     clearInputFieldEl()
