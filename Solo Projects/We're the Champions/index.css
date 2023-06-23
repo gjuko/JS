@@ -48,7 +48,10 @@ h3 {
     padding: 2em 4em;
 }
 
+
 .main-input {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
     border: none;
     resize: none;
     width: 317px;
@@ -64,6 +67,7 @@ h3 {
     color: #8f8f8f;
     padding: 10px;
     padding-bottom: 90px;
+    word-wrap: break-word;
 }
 
 .fields {
@@ -113,11 +117,9 @@ button {
     border: none;
 }
 
-.endorsements-container1 {
+.endorsements-container {
     user-select: none;
     text-align: start;
-    list-style-type: none;
-    flex-direction: column;
     margin-left: 33px;
     width: 307px;
     height: 118px;
@@ -131,55 +133,33 @@ button {
     color: black;
     padding: 10px;
     margin-bottom: 15px;
+    inline-size: 300px; 
 }
 
-.endorsements-container2 {
-    user-select: none;
-    text-align: start;
-    list-style-type: none;
-    flex-direction: column;
-    margin-left: 33px;
-    width: 307px;
-    height: 118px;
-    background: white;
-    border-radius: 8px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 18px;
-    color: black;
-    padding: 10px;
-    margin-bottom: 15px;
+.endorsementFrom {
+    padding-left: 40px;
+    position: absolute
 }
 
-.endorsements-container3 {
-    user-select: none;
-    text-align: start;
-    list-style-type: none;
-    flex-direction: column;
-    margin-left: 33px;
-    width: 307px;
-    height: 118px;
-    background: white;
-    border-radius: 8px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 18px;
-    color: black;
-    padding: 10px;
-    margin-bottom: 15px;
+.endorsementTo {
+    padding-left: 20px;
+    position: absolute;
 }
+
+.To {
+    font-weight: 700;
+}
+
+.From {
+    font-weight: 700;
+}
+
 
 .endorsements-input {
     user-select: none;
     text-align: start;
-    list-style-type: none;
-    flex-direction: column;
     width: 286px;
-    height: 52.68px;
+    height: 50px;
     left: 50px;
     top: 533.93px;
     background: white;
@@ -193,22 +173,3 @@ button {
     padding: 10px;
 }
 
-.endorsementTo {
-    text-align: start;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 17px;
-    color: #1B1924;
-}
-
-.endorsementFrom {
-    text-align: start;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 17px;
-    color: #1B1924;
-}
