@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
 const appSettings = {
   databaseURL: "https://playground-7c965-default-rtdb.asia-southeast1.firebasedatabase.app/"
@@ -23,6 +23,27 @@ const endorsTo1 = document.getElementById("endorsementTo1");
 const endorsTo2 = document.getElementById("endorsementTo2");
 const endorsTo3 = document.getElementById("endorsementTo3");
 
+const likeButtons = document.querySelectorAll(".like-button");
+likeButtons.forEach(button => {
+  button.addEventListener("click", function() {
+    let likeCountEl = this.parentNode.querySelector(".likeCount");
+    let currentLikes = parseInt(likeCountEl.textContent);
+    let isLiked = this.dataset.liked === "true";
+
+    if (isLiked) {
+      currentLikes--;
+      this.dataset.liked = "false";
+      this.textContent = "♡";
+    } else {
+      currentLikes++;
+      this.dataset.liked = "true";
+      this.textContent = "❤️";
+    }
+
+    likeCountEl.textContent = currentLikes;
+  });
+});
+
 let previousValue = "";
 let tempValue = "";
 let previousfromValue = "";
@@ -35,7 +56,8 @@ publishBtn.addEventListener("click", function() {
     let fromValue = fromFieldEl.value;
     let inputValue = inputFieldEl.value;
     let toValue = toFieldEl.value;
-    // push(endorsementsInDB, inputValue)
+    
+    push(endorsementsInDB, inputValue)
     endorsementsFieldThree.innerHTML = endorsementsFieldTwo.innerHTML;
     endorsementsFieldTwo.innerHTML = endorsementsFieldOne.innerHTML;
     endorsementsFieldOne.innerHTML = inputValue;
@@ -63,44 +85,15 @@ function clearInputFieldEl() {
   toFieldEl.value = "";
 }
 
-
 onValue(endorsementsInDB, function (snapshot) {
     if (snapshot.exists()) {
-      const allEndorsement = Object.entries(snapshot.val());
-      allEndorsement.forEach((el) => {
+      let allEndorsements = Object.entries(snapshot.val());
+      
+      for (let i = 0; i < allEndorsements.length; i++) {
+        let currentItem = allEndorsements[i]
+    }   
+      allEndorsements.forEach((el) => {
         renderText(el);
       });
     }
 });
-
-
-
-
-
-    // Variables
-
-const likeBtn = document.querySelector('.heart-icon');
-const numberOfLikesElement = document.querySelector('.number-of-likes');
-
-let numberOfLikes = Number.parseInt(numberOfLikesElement.textContent, 10);
-let isLiked = false;
-
-// Functions
-
-const likeClick = () => {
-  if (!isLiked) {
-    likeBtn.classList.add('isLiked');
-    numberOfLikes++;
-    numberOfLikesElement.textContent = numberOfLikes;
-    isLiked = !isLiked;
-  } else {
-    likeBtn.classList.remove('isLiked');
-    numberOfLikes--;
-    numberOfLikesElement.textContent = numberOfLikes;
-    isLiked = !isLiked;
-  }
-};
-
-// Event Listeners
-
-likeBtn.addEventListener('click', likeClick);
