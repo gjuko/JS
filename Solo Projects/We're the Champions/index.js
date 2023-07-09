@@ -1,5 +1,9 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+<<<<<<< Updated upstream
 import { getDatabase, ref, push, onValue, update } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+=======
+import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+>>>>>>> Stashed changes
 
 const appSettings = {
   databaseURL: "https://playground-7c965-default-rtdb.asia-southeast1.firebasedatabase.app/"
@@ -13,6 +17,7 @@ const publishBtn = document.getElementById("publish-btn");
 const inputFieldEl = document.getElementById("main-input");
 const endorsementsFieldOne = document.getElementById("endfield1");
 const endorsementsFieldTwo = document.getElementById("endfield2");
+<<<<<<< Updated upstream
 const endorsementsFieldThree = document.getElementById("endfield3");
 const fromFieldEl = document.getElementById("From-field");
 const toFieldEl = document.getElementById("To-field");
@@ -161,4 +166,40 @@ database.ref('.info/connected').on('value', function (snapshot) {
 });
 
 function addNewElement(value) {
+=======
+const fromFieldBtn = document.getElementById("From-field");
+
+const endorsFrom1 = document.getElementById("endorsementFrom1");
+const endorsFrom2 = document.getElementById("endorsementFrom2");
+
+let previousValue = "";
+let tempValue = "";
+let previousfromValue = "";
+let tempfromValue = "";
+
+publishBtn.addEventListener("click", function() {
+  let fromValue = fromFieldBtn.value;
+  let inputValue = inputFieldEl.value;
+
+  endorsementsFieldTwo.innerHTML = endorsementsFieldOne.innerHTML;
+  endorsementsFieldOne.innerHTML = inputValue;
+  tempValue = endorsementsFieldTwo.innerHTML;
+  previousValue = inputValue;
+
+  endorsFrom2.innerHTML = endorsFrom1.innerHTML;
+  endorsFrom1.innerHTML = fromValue;
+  tempfromValue = endorsFrom2.innerHTML;
+  previousfromValue = fromValue;
+
+  console.log("Button clicked"); 
+
+  // Uncomment the following line if you want to push the inputValue to the database
+  // push(endorsementsInDB, inputValue);
+
+  clearInputFieldEl();
+});
+
+function clearInputFieldEl() {
+  inputFieldEl.value = "";
+>>>>>>> Stashed changes
 }
