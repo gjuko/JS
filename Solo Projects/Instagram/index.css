@@ -1,5 +1,99 @@
 html, body {
     margin: 0;
     padding: 0;
+    background-color: #C6C6C6;
 }
 
+.post-container {
+    background-color: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #C6C6C6;
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.container {
+    width: 375px;
+    margin: 0 auto;
+}
+
+.posts-avatar {
+    margin-top: 10px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+/* .location {
+    color: #000;
+    font-family: Source Sans Pro;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+} */
+
+.name {
+    color: #000;
+    font-family: Source Sans Pro;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.icons {
+    padding-right: 15px;
+    margin-top: 10px;
+    /* width: 104.337px; */
+    height: 22.135px;
+}
+
+.post-image {
+    width: 375px;
+}
+
+.username, .likes  {
+    color: #000;
+    font-family: Source Sans Pro;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.post-info {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.post-info .posts-avatar {
+    margin-right: 10px;
+}
+
+.post-info .name {
+    color: #000;
+    font-family: 'Source Sans Pro';
+    font-size: 14px;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.post-info .location {
+    color: #000;
+    font-family: Source Sans Pro;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
