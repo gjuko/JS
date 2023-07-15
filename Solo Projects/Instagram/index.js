@@ -1,6 +1,6 @@
 const posts = [
     {
-        name: "BMW-MOTTORAD",
+        name: "BMW-Mottorad",
         username: "gjuko",
         location: "Munich, Germany",
         avatar: "images/bmw-logo.png",
@@ -48,7 +48,7 @@ function createPostElements() {
         postInfo.classList.add("post-info");
 
         const postAvatar = document.createElement("img");
-        postAvatar.classList.add("posts-avatar");
+        postAvatar.classList.add("post-avatar");
         postAvatar.src = post.avatar;
         postInfo.appendChild(postAvatar);
 
