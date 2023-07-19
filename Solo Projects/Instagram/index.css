@@ -3,7 +3,6 @@ html, body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding: 0;
     background-color: #C6C6C6;
 }
 
@@ -46,7 +45,6 @@ header {
     border-radius: 50%;
 }
 
-
 .location {
     color: #000;
     font-family: Source Sans Pro;
@@ -76,6 +74,7 @@ header {
     font-weight: 700;
     line-height: normal;
 }
+
 .post-info {
     display: flex;
     flex-direction: column;
@@ -92,8 +91,6 @@ header {
 }
 
 .comment {
-    margin-top: -27.27px;
-    margin-left: 77px;
     color: #000;
     font-family: Source Sans Pro;
     font-size: 14px;
@@ -108,16 +105,21 @@ header {
    margin-right: 10px;
 }
 
-.like, .comment, .share {
-    /* max-width: 100%; */
+.like, .comment-icon, .share {
     height: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+  }
+
+.comment {
+    margin-right: 10px;
   }
 
 
-.comment:hover {
-    background-image: url("/images/comment-hover.svg");
+.comment-icon:hover {
+    background-image: url("/images/comment-hover.png");
 }
 
 .share:hover {
-    background-image: url("/images/share-hover.svg");
+    background-image: url("/images/share-hover.png");
 }

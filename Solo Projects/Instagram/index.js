@@ -85,7 +85,7 @@ const posts = [
   
       let img1 = document.createElement("img");
       img1.classList.add("like");
-      img1.src = "/images/like.svg";
+      img1.src = "/images/like.png";
   // Variables to store the state
   let isImage1Clicked = false;
 
@@ -94,7 +94,7 @@ const posts = [
     if (isImage1Clicked) {
       // If image1 is clicked again, decrement the like count and change the background image back to the original
       post.likes--;
-      img1.style.backgroundImage = "url('/images/like.svg')";
+      img1.style.backgroundImage = "url('/images/like.png')";
     } else {
       // Otherwise, increment the like count and change the background image to the new image
       post.likes++;
@@ -109,12 +109,12 @@ const posts = [
   });
   
       let img2 = document.createElement("img");
-      img2.classList.add("comment");
+      img2.classList.add("comment-icon");
       img2.src = "/images/comment.png";
 
       let img3 = document.createElement("img");
       img3.classList.add("share");
-      img3.src = "/images/share.svg";
+      img3.src = "/images/share.png";
   
       imageWrapper.appendChild(img1);
       imageWrapper.appendChild(img2);
