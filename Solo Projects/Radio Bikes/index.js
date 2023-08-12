@@ -1,7 +1,7 @@
 import { bikesData } from './data.js'
 
-// const bikeRadios = document.getElementById("Bike-radios")
-// const showImageBtn = document.getElementById("Show-Image-btn")
+const bikeRadios = document.getElementById("bike-radios")
+const showImageBtn = document.getElementById("Show-Image-btn")
 
 function getTypesArray(bikes){
     const bikesArray = []
@@ -14,16 +14,13 @@ function getTypesArray(bikes){
 }
 
 
-console.log(getTypesArray(bikesData))
-
 function renderTypesRadios(bikes){
+    let radioItems = ''
     const types = getTypesArray(bikes)
-
-
-    console.log(types)
-
-
-
+    for (let type of types) {
+        radioItems += `<p>${type}</p>`
+    }
+    bikeRadios.innerHTML = radioItems
 }
 
 renderTypesRadios(bikesData)

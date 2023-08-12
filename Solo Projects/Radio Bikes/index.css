@@ -34,6 +34,13 @@ h3 {
     text-align: center;
 }
 
+.controls-container{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin: 0px auto;
+}
+
 .Show-Image-btn {
         display: flex;
         flex-direction: column;
