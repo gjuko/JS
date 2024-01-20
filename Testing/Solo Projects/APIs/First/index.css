@@ -1,11 +1,15 @@
 /* body {
     margin: 0;
     background-color: #1C1C1C;
-    text-align: center;
+    text-align: right;
     width: 550px;
     height: 729px;
     background: #1F2937;
     margin: auto;
-    margin-top: 126px;
+    margin-top: 12px;
     margin-bottom: 124px;
 } */
+#weather {
+    text-align: right;
+    color: red;
+  }
