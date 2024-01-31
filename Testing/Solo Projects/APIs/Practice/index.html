@@ -1,12 +1,27 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Karla:wght@200;400;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="index.css">
-    </head>
-    <body>
-        <div id="colors"></div>
-        <script src="index.js"></script>
-    </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Generator</title>
+  <link rel="stylesheet" href="index.css"> <!-- Include the CSS file -->
+
+  <style>
+    /* Additional inline styles, if needed */
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Color Generator</h2>
+    <label for="color-input">Pick a color: </label>
+    <input type="color" id="color-input">
+    <button onclick="generateColorScheme()">Generate Color Scheme</button>
+
+    <div id="color-picker" class="color-scheme"></div>
+  </div>
+
+  <script src="index.js"></script>
+
+</body>
 </html>
