@@ -8,7 +8,7 @@ fetch("http://www.omdbapi.com/?t=Titanic&y=1997&apikey=54847e20")
     Duration = data.Runtime
     Genre = data.Genre
     Description = data.Plot
-    console.log(Rating)
+    console.log(data)
 }
 
     )
