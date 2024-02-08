@@ -1,7 +1,10 @@
+searchBtn = document.getElementById("searchField")
+
+document.getElementById("btn-Search").addEventListener("submit", function(e) {
+
 fetch("http://www.omdbapi.com/?t=Titanic&y=1997&apikey=54847e20")
 .then(response => response.json())
 .then(data => 
-    
     {
     Title = data.Title
     Rating = data.Ratings[0]
