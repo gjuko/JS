@@ -1,17 +1,45 @@
-searchBtn = document.getElementById("searchField")
 
-document.getElementById("btn-Search").addEventListener("submit", function(e) {
+const searchBtn = document.getElementById("search-button")
 
-fetch("http://www.omdbapi.com/?t=Titanic&y=1997&apikey=54847e20")
-.then(response => response.json())
-.then(data => 
-    {
-    Title = data.Title
-    Rating = data.Ratings[0]
-    Duration = data.Runtime
-    Genre = data.Genre
-    Description = data.Plot
-    console.log(data)
-}
+    searchBtn.addEventListener("click", () => {
+        const title = document.getElementById("search-field").value;
+    
+        if (title) {
+            const apiUrl = `http://www.omdbapi.com/?apikey=54847e20&t=${(title)}`;
+            fetch(apiUrl)
+                .then(response => {
+                    return response.json();})
+                .then(data => {
+                    renderResults(data);
+                });
+        } else {
+            console.log("Please enter a movie title");
+        }
+        });
 
-    )
+        function renderResults(data) {
+            const somethingDiv = document.getElementById("something");
+            somethingDiv.innerHTML = "";
+        
+            // Create HTML elements to display the results
+            const titleElement = document.createElement("h2");
+            titleElement.textContent = data.Title;
+            const durationElement = document.createElement("p");
+            durationElement.textContent = `Duration: ${data.Runtime}`;
+            const genreElement = document.createElement("p");
+            genreElement.textContent = `Genre: ${data.Genre}`;
+            const descriptionElement = document.createElement("p");
+            descriptionElement.textContent = `Description: ${data.Plot}`;
+
+            somethingDiv.appendChild(titleElement);
+            somethingDiv.appendChild(durationElement);
+            somethingDiv.appendChild(genreElement);
+            somethingDiv.appendChild(descriptionElement);
+        }
+
+
+        // Title = data.Title
+        // Rating = data.Ratings[0]
+        // Duration = data.Runtime
+        // Genre = data.Genre
+        // Description = data.Plot
