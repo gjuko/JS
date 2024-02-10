@@ -8,8 +8,59 @@
 <body>
     <div id="topText">
         <header>My Watchlist</header>
-        <a href="/index.html">Seach for movies</a>
+        <a href="/index.html">Search for movies</a>
     </div>
-    </div>
+    <div id="watchlist-container"></div>
+    
+    <script>
+        // Retrieve watchlist from local storage
+        const watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
+        
+        // Display watchlist items
+        const watchlistContainer = document.getElementById("watchlist-container");
+        watchlist.forEach(movieInfo => {
+            // Create container for the movie
+            const movieWrapper = document.createElement("div");
+            movieWrapper.classList.add("movie-wrapper");
+
+            // Create movie element
+            const movieElement = document.createElement("div");
+            movieElement.classList.add("movie");
+
+            const titleElement = document.createElement("h2");
+            titleElement.textContent = movieInfo.title;
+            movieElement.appendChild(titleElement);
+
+            const imdbScore = document.createElement("h3");
+            imdbScore.innerHTML = `${movieInfo.imdbRating}<span>&#11088;</span>`;
+            movieElement.appendChild(imdbScore);
+
+            const durationElement = document.createElement("p");
+            durationElement.textContent = `Duration: ${movieInfo.duration}`;
+            movieElement.appendChild(durationElement);
+
+            const genreElement = document.createElement("p");
+            genreElement.textContent = `Genre: ${movieInfo.genre}`;
+            movieElement.appendChild(genreElement);
+
+            const descriptionElement = document.createElement("p");
+            descriptionElement.textContent = `Description: ${movieInfo.description}`;
+            movieElement.appendChild(descriptionElement);
+
+            const moviePosterElement = document.createElement("img");
+            moviePosterElement.src = movieInfo.poster;
+            movieElement.appendChild(moviePosterElement);
+
+            // Append the movie element to the movie wrapper
+            movieWrapper.appendChild(movieElement);
+
+            // Append the movie wrapper to the watchlist container
+            watchlistContainer.appendChild(movieWrapper);
+
+            // Add a horizontal rule after each movie container
+            const separator = document.createElement("hr");
+            watchlistContainer.appendChild(separator);
+        });
+    </script>
 </body>
 </html>
