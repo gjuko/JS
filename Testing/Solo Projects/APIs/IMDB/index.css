@@ -1,0 +1,116 @@
+CSS for top part of the page
+.topPart {
+    background-color: #f2f2f2; /* Light gray background */
+    padding: 20px; /* Padding around the top part */
+    text-align: center; /* Center align text */
+}
+
+/* Header styling */
+header {
+    font-size: 24px; /* Larger font size for header */
+    margin-bottom: 20px; /* Margin below header */
+}
+
+/* Search field styling */
+#search-field {
+    padding: 10px; /* Padding for search field */
+    width: 200px; /* Width of search field */
+    margin-right: 10px; /* Margin to separate from button */
+}
+
+/* Search button styling */
+#search-button {
+    padding: 10px 20px; /* Padding for search button */
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    cursor: pointer; /* Cursor pointer */
+}
+/* Style for the remove button */
+.remove-button {
+    background-color: #f44336; /* Red background */
+    border: none; /* Remove border */
+    color: white; /* White text */
+    padding: 10px 20px; /* Add some padding */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make it a block element */
+    font-size: 16px; /* Increase font size */
+    cursor: pointer; /* Add cursor pointer */
+    border-radius: 5px; /* Add rounded corners */
+}
+
+/* Style for remove button on hover */
+.remove-button:hover {
+    background-color: #d32f2f; /* Darker red background on hover */
+}
+
+
+/* Movie container styling */
+#movie-container {
+    display: flex; /* Display movies in a row */
+    flex-direction: column;
+    flex-wrap: wrap; /* Wrap movies to the next row */
+    justify-content: center; /* Center align movies */
+    padding: 20px; /* Padding for movie container */
+}
+
+/* Movie card styling */
+.movie-wrapper {
+    margin: 10px; /* Margin around each movie */
+    padding: 20px; /* Padding for movie card */
+    background-color: #fff; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+    width: 300px; /* Width of movie card */
+}
+
+.movie {
+    text-align: left; /* Left align text */
+}
+
+/* Add to Watchlist button styling */
+.add-to-watchlist-button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Padding for button */
+    cursor: pointer; /* Cursor pointer */
+    border-radius: 5px; /* Rounded corners */
+    margin-top: 10px; /* Margin from top */
+}
+
+.add-to-watchlist-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Movie poster styling */
+#movie-poster {
+    display: flex; /* Display posters in a row */
+    justify-content: center; /* Center align posters */
+    padding: 20px; /* Padding for poster container */
+}
+
+#movie-poster img {
+    max-width: 100%; /* Ensure image doesn't exceed container width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Style for the watchlist button */
+.watchlist-button {
+    background-color: #4CAF50; /* Green background */
+    border: none; /* Remove border */
+    color: white; /* White text */
+    padding: 10px 20px; /* Add some padding */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make it a block element */
+    font-size: 16px; /* Increase font size */
+    cursor: pointer; /* Add cursor pointer */
+    border-radius: 5px; /* Add rounded corners */
+}
+
+/* Style for watchlist button on hover */
+.watchlist-button:hover {
+    background-color: #45a049; /* Darker green background on hover */
+}
