@@ -2,7 +2,6 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
-    
 }
 
 .container {
@@ -23,99 +22,7 @@ header h1 {
     color: #333;
 }
 
-#myWatchlist {
-    color: #4CAF50;
-    text-decoration: none;
-    margin-left: 10px;
-    font-size: 18px;
-}
-
-.search {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-#search-field {
-    padding: 10px;
-    width: 60%;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-#search-button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-#search-button:hover {
-    background-color: #45a049;
-}
-
-#movie-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.movie-wrapper {
-    margin: 10px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-}
-
-.movie {
-    text-align: left;
-}
-
-.add-to-watchlist-button, .watchlist-button, .remove-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 10px;
-    transition: background-color 0.3s;
-}
-
-.add-to-watchlist-button:hover, .watchlist-button:hover, .remove-button:hover {
-    background-color: #45a049;
-}
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-}
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-}
-
-header {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-header h1 {
-    font-size: 36px;
-    color: #333;
-}
-
-#myWatchlist {
+#myWatchlist, #topText a, h1 {
     color: #4CAF50;
     text-decoration: none;
     margin-left: 10px;
@@ -184,7 +91,6 @@ header h1 {
     background-color: #45a049;
 }
 
-
 #notification-container {
     position: fixed;
     top: 50%;
@@ -210,25 +116,3 @@ header h1 {
 .toast span {
     font-weight: bold;
 }
-
-
-
-#topText {
-    text-align: start; /* Center align the text */
-    padding: 20px 0;
-}
-
-#topText a {
-    color: #4CAF50;
-    text-decoration: none;
-    margin-left: 10px;
-    font-size: 18px;
-}
-
-h1 {
-    color: #4CAF50;
-    text-decoration: none;
-    margin-left: 10px;
-    font-size: 28px;
-}
-
