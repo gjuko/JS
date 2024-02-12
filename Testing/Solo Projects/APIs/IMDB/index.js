@@ -1,65 +1,20 @@
 const searchBtn = document.getElementById("search-button");
 const searchField = document.getElementById("search-field");
-
-// Function to fetch random movies
-function fetchRandomMovies() {
-    const apiUrl = "http://www.omdbapi.com/?apikey=54847e20&type=movie&s=random&page=1";
-    return fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => data.Search);
-}
-
-// Function to render random movies
-function renderRandomMovies() {
-    fetchRandomMovies()
-        .then(movies => {
-            movies.forEach(movie => {
-                const apiUrl = `http://www.omdbapi.com/?apikey=54847e20&i=${movie.imdbID}`;
-                fetch(apiUrl)
-                    .then(response => response.json())
-                    .then(data => renderResults(data))
-                    .catch(error => {
-                        console.error('Error fetching movie details:', error);
-                    });
-            });
-        })
-        .catch(error => {
-            console.error('Error fetching random movies:', error);
-        });
-}
-
-// Call renderRandomMovies when the page is loaded
-window.addEventListener("load", renderRandomMovies);
+const notificationContainer = document.getElementById("notification-container");
 
 
-searchBtn.addEventListener("click", search);
-
-searchField.addEventListener("keydown", event => {
-    if (event.key === "Enter") {
-        search();
-    }
-});
-
-function search() {
-    const title = searchField.value;
-
-    if (title) {
-        const apiUrl = `http://www.omdbapi.com/?apikey=54847e20&t=${title}`;
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                renderResults(data);
-                searchField.value = ""; // Reset the value of the search field
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error);
-            });
-    } else {
-        console.log("Please enter a movie title");
+async function fetchMovieData(apiUrl) {
+    try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching movie data:', error);
+        throw error;
     }
 }
 
-function renderResults(data) {
+function renderMovie(movieData) {
     const movieContainer = document.getElementById("movie-container");
 
     // Create container for the movie
@@ -71,10 +26,10 @@ function renderResults(data) {
     movieElement.classList.add("movie");
 
     const titleElement = document.createElement("h2");
-    titleElement.textContent = data.Title;
+    titleElement.textContent = movieData.Title;
     movieElement.appendChild(titleElement);
 
-    const imdbRating = data.Ratings.find(rating => rating.Source === "Internet Movie Database");
+    const imdbRating = movieData.Ratings.find(rating => rating.Source === "Internet Movie Database");
     const imdbScore = document.createElement("h3");
     if (imdbRating) {
         const ratingValue = imdbRating.Value.split("/")[0]; // Extract the rating part before "/"
@@ -83,15 +38,15 @@ function renderResults(data) {
     movieElement.appendChild(imdbScore);
 
     const durationElement = document.createElement("p");
-    durationElement.textContent = `Duration: ${data.Runtime}`;
+    durationElement.textContent = `Duration: ${movieData.Runtime}`;
     movieElement.appendChild(durationElement);
 
     const yearElement = document.createElement("p");
-    yearElement.textContent = `Released: ${data.Released}`;
+    yearElement.textContent = `Released: ${movieData.Released}`;
     movieElement.appendChild(yearElement);
 
     const genreElement = document.createElement("p");
-    genreElement.textContent = `Genre: ${data.Genre}`;
+    genreElement.textContent = `Genre: ${movieData.Genre}`;
     movieElement.appendChild(genreElement);
 
     const watchListButton = document.createElement("button");
@@ -100,11 +55,11 @@ function renderResults(data) {
     movieElement.appendChild(watchListButton);
 
     const descriptionElement = document.createElement("p");
-    descriptionElement.textContent = `Description: ${data.Plot}`;
+    descriptionElement.textContent = `Description: ${movieData.Plot}`;
     movieElement.appendChild(descriptionElement);
 
     const moviePosterElement = document.createElement("img");
-    moviePosterElement.src = data.Poster;
+    moviePosterElement.src = movieData.Poster;
     movieElement.appendChild(moviePosterElement);
 
     // Append the movie element to the movie wrapper
@@ -117,17 +72,17 @@ function renderResults(data) {
     const separator = document.createElement("hr");
     movieContainer.insertBefore(separator, movieWrapper.nextSibling);
 
-    // Add a click event listener to the plus symbol
+    // Add a click event listener to the "Add to Watchlist" button
     watchListButton.addEventListener("click", () => {
         // Extract movie information
         const movieInfo = {
-            title: data.Title,
+            title: movieData.Title,
             imdbRating: imdbRating ? imdbRating.Value : "N/A", // Handle cases where IMDb rating is not available
-            duration: data.Runtime,
-            year: data.Released,
-            genre: data.Genre,
-            description: data.Plot,
-            poster: data.Poster
+            duration: movieData.Runtime,
+            year: movieData.Released,
+            genre: movieData.Genre,
+            description: movieData.Plot,
+            poster: movieData.Poster
         };
 
         // Get the existing watchlist from local storage or initialize an empty array
@@ -139,15 +94,50 @@ function renderResults(data) {
         // Save the updated watchlist to local storage
         localStorage.setItem("watchlist", JSON.stringify(watchlist));
 
-        // Display a message indicating that the movie has been added to the watchlist
-        const message = document.createElement("p");
-        message.textContent = `${data.Title} has been added to your watchlist!`;
-        movieWrapper.appendChild(message);
-
-        // Remove the message after a certain time (e.g., 3 seconds)
-        setTimeout(() => {
-            movieWrapper.removeChild(message);
-        }, 3000);
+        // Display a toast notification
+        const toastDetails = {
+            id: "success",
+            icon: "fa-check",
+            text: `${movieData.Title} has been added to your watchlist!`
+        };
+        createToast(toastDetails);
     });
 }
 
+async function searchAndRenderMovie(title) {
+    if (title) {
+        const apiUrl = `http://www.omdbapi.com/?apikey=54847e20&t=${title}`;
+        try {
+            const data = await fetchMovieData(apiUrl);
+            renderMovie(data);
+            searchField.value = ""; // Reset the value of the search field
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    } else {
+        console.log("Please enter a movie title");
+    }
+}
+
+// Add event listeners
+searchBtn.addEventListener("click", () => searchAndRenderMovie(searchField.value));
+searchField.addEventListener("keydown", event => {
+    if (event.key === "Enter") {
+        searchAndRenderMovie(searchField.value);
+    }
+});
+
+const createToast = (details) => {
+    const { icon, text } = details;
+    const toast = document.createElement("div");
+    toast.className = "toast";
+    toast.innerHTML = `<i class="fa-solid ${icon}"></i><span>${text}</span>`;
+    notificationContainer.appendChild(toast);
+
+    setTimeout(() => {
+        toast.style.opacity = 0;
+        setTimeout(() => {
+            toast.remove();
+        }, 1000); // Fade out transition duration
+    }, 4000); // 3 seconds
+};

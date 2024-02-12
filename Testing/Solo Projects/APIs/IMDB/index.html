@@ -7,24 +7,21 @@
     <title>Find your Film</title>
 </head>
 <body>
-    <div class="topPart">
-        <header>Find your film</header>
-        <a href="/watchlist.html" id="myWatchlist">My Watchlist</a>
-        <input type="text" id="search-field" placeholder="Enter movie title">
-        <button id="search-button">Search</button>
-    </div>
+    <div class="container">
+        <header>
+            <h1>Find your film</h1>
+            <a href="/watchlist.html" id="myWatchlist">My Watchlist</a>
+        </header>
+        <div class="search">
+            <input type="text" id="search-field" placeholder="Enter movie title">
+            <button id="search-button">Search</button>
+        </div>
+        <div id="notification-container"></div>
 
-    <div id="movie-container"></div>
+
+        <div id="movie-container"></div>
         <div id="movie-poster"></div>
     </div>
-
-    <span class="add-to-watchlist-container">
-        <button class="add-to-watchlist-button">
-            <span class="plus-symbol">+</span> Add to Watchlist
-        </button>
-    </span>
-    
-    
     <script src="index.js"></script> <!-- Link to your JavaScript file -->
 </body>
 </html>

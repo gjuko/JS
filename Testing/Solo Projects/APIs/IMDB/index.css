@@ -1,116 +1,234 @@
-CSS for top part of the page
-.topPart {
-    background-color: #f2f2f2; /* Light gray background */
-    padding: 20px; /* Padding around the top part */
-    text-align: center; /* Center align text */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    
 }
 
-/* Header styling */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
 header {
-    font-size: 24px; /* Larger font size for header */
-    margin-bottom: 20px; /* Margin below header */
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-/* Search field styling */
+header h1 {
+    font-size: 36px;
+    color: #333;
+}
+
+#myWatchlist {
+    color: #4CAF50;
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+.search {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
 #search-field {
-    padding: 10px; /* Padding for search field */
-    width: 200px; /* Width of search field */
-    margin-right: 10px; /* Margin to separate from button */
+    padding: 10px;
+    width: 60%;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-/* Search button styling */
 #search-button {
-    padding: 10px 20px; /* Padding for search button */
-    background-color: #4CAF50; /* Green background */
-    color: white; /* White text */
-    border: none; /* Remove border */
-    cursor: pointer; /* Cursor pointer */
-}
-/* Style for the remove button */
-.remove-button {
-    background-color: #f44336; /* Red background */
-    border: none; /* Remove border */
-    color: white; /* White text */
-    padding: 10px 20px; /* Add some padding */
-    text-align: center; /* Center text */
-    text-decoration: none; /* Remove underline */
-    display: inline-block; /* Make it a block element */
-    font-size: 16px; /* Increase font size */
-    cursor: pointer; /* Add cursor pointer */
-    border-radius: 5px; /* Add rounded corners */
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-/* Style for remove button on hover */
-.remove-button:hover {
-    background-color: #d32f2f; /* Darker red background on hover */
+#search-button:hover {
+    background-color: #45a049;
 }
 
-
-/* Movie container styling */
 #movie-container {
-    display: flex; /* Display movies in a row */
-    flex-direction: column;
-    flex-wrap: wrap; /* Wrap movies to the next row */
-    justify-content: center; /* Center align movies */
-    padding: 20px; /* Padding for movie container */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-/* Movie card styling */
 .movie-wrapper {
-    margin: 10px; /* Margin around each movie */
-    padding: 20px; /* Padding for movie card */
-    background-color: #fff; /* White background */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
-    width: 300px; /* Width of movie card */
+    margin: 10px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
 }
 
 .movie {
-    text-align: left; /* Left align text */
+    text-align: left;
 }
 
-/* Add to Watchlist button styling */
-.add-to-watchlist-button {
-    background-color: #4CAF50; /* Green background */
-    color: white; /* White text */
-    border: none; /* Remove border */
-    padding: 10px 20px; /* Padding for button */
-    cursor: pointer; /* Cursor pointer */
-    border-radius: 5px; /* Rounded corners */
-    margin-top: 10px; /* Margin from top */
+.add-to-watchlist-button, .watchlist-button, .remove-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
 }
 
-.add-to-watchlist-button:hover {
-    background-color: #45a049; /* Darker green on hover */
+.add-to-watchlist-button:hover, .watchlist-button:hover, .remove-button:hover {
+    background-color: #45a049;
 }
 
-/* Movie poster styling */
-#movie-poster {
-    display: flex; /* Display posters in a row */
-    justify-content: center; /* Center align posters */
-    padding: 20px; /* Padding for poster container */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
 }
 
-#movie-poster img {
-    max-width: 100%; /* Ensure image doesn't exceed container width */
-    height: auto; /* Maintain aspect ratio */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Style for the watchlist button */
-.watchlist-button {
-    background-color: #4CAF50; /* Green background */
-    border: none; /* Remove border */
-    color: white; /* White text */
-    padding: 10px 20px; /* Add some padding */
-    text-align: center; /* Center text */
-    text-decoration: none; /* Remove underline */
-    display: inline-block; /* Make it a block element */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 36px;
+    color: #333;
+}
+
+#myWatchlist {
+    color: #4CAF50;
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+.search {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#search-field {
+    padding: 10px;
+    width: 60%;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     font-size: 16px; /* Increase font size */
-    cursor: pointer; /* Add cursor pointer */
-    border-radius: 5px; /* Add rounded corners */
 }
 
-/* Style for watchlist button on hover */
-.watchlist-button:hover {
-    background-color: #45a049; /* Darker green background on hover */
+#search-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
+
+#search-button:hover {
+    background-color: #45a049;
+}
+
+#movie-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.movie-wrapper {
+    margin: 10px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.movie {
+    text-align: left;
+}
+
+.add-to-watchlist-button, .watchlist-button, .remove-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.add-to-watchlist-button:hover, .watchlist-button:hover, .remove-button:hover {
+    background-color: #45a049;
+}
+
+
+#notification-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+.toast {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.toast i {
+    margin-right: 10px;
+}
+
+.toast span {
+    font-weight: bold;
+}
+
+
+
+#topText {
+    text-align: start; /* Center align the text */
+    padding: 20px 0;
+}
+
+#topText a {
+    color: #4CAF50;
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+h1 {
+    color: #4CAF50;
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: 28px;
+}
+

@@ -1,14 +1,9 @@
 // Function to render watchlist
 function renderWatchlist() {
     const watchlistContainer = document.getElementById("watchlist-container");
-
-    // Get watchlist from local storage
     const watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
+    watchlistContainer.innerHTML = ""; // Clear previous content
 
-    // Clear previous content
-    watchlistContainer.innerHTML = "";
-
-    // Render each movie in the watchlist
     watchlist.forEach(movieInfo => {
         const movieElement = createMovieElement(movieInfo);
         watchlistContainer.appendChild(movieElement);
@@ -17,48 +12,40 @@ function renderWatchlist() {
 
 // Function to create movie element
 function createMovieElement(movieInfo) {
-    // Create container for the movie
+    const { title, imdbRating, duration, genre, description, poster } = movieInfo;
     const movieWrapper = document.createElement("div");
     movieWrapper.classList.add("movie-wrapper");
 
-    // Create movie element
     const movieElement = document.createElement("div");
     movieElement.classList.add("movie");
 
     const titleElement = document.createElement("h2");
-    titleElement.textContent = movieInfo.title;
+    titleElement.textContent = title;
     movieElement.appendChild(titleElement);
 
-    const imdbRatingElement = document.createElement("p");
-    imdbRatingElement.textContent = `IMDb Rating: ${movieInfo.imdbRating}`;
-    movieElement.appendChild(imdbRatingElement);
+        // Create remove button
+        const removeButton = document.createElement("button");
+        removeButton.textContent = "Remove from Watchlist";
+        removeButton.classList.add("remove-button");
+        removeButton.addEventListener("click", () => removeFromWatchlist(title));
+        movieElement.appendChild(removeButton);
 
-    const durationElement = document.createElement("p");
-    durationElement.textContent = `Duration: ${movieInfo.duration}`;
-    movieElement.appendChild(durationElement);
+    const elements = [
+        { type: "p", text: `IMDb Rating: ${imdbRating}` },
+        { type: "p", text: `Duration: ${duration}` },
+        { type: "p", text: `Genre: ${genre}` },
+        { type: "p", text: `Description: ${description}` },
+        { type: "img", src: poster },
+    ];
+    
 
-    const genreElement = document.createElement("p");
-    genreElement.textContent = `Genre: ${movieInfo.genre}`;
-    movieElement.appendChild(genreElement);
-
-    const descriptionElement = document.createElement("p");
-    descriptionElement.textContent = `Description: ${movieInfo.description}`;
-    movieElement.appendChild(descriptionElement);
-
-    const posterElement = document.createElement("img");
-    posterElement.src = movieInfo.poster;
-    movieElement.appendChild(posterElement);
-
-    // Create remove button
-    const removeButton = document.createElement("button");
-    removeButton.textContent = "Remove";
-    removeButton.classList.add("remove-button"); // Add a CSS class for styling
-    removeButton.addEventListener("click", () => {
-        removeFromWatchlist(movieInfo.title);
+    elements.forEach(item => {
+        const element = document.createElement(item.type);
+        if (item.type === "img") element.src = item.src;
+        else element.textContent = item.text;
+        movieElement.appendChild(element);
     });
-    movieElement.appendChild(removeButton);
 
-    // Append the movie element to the movie wrapper
     movieWrapper.appendChild(movieElement);
 
     return movieWrapper;
@@ -66,16 +53,9 @@ function createMovieElement(movieInfo) {
 
 // Function to remove a movie from the watchlist
 function removeFromWatchlist(title) {
-    // Get watchlist from local storage
     let watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
-
-    // Filter out the movie to be removed
     watchlist = watchlist.filter(movie => movie.title !== title);
-
-    // Save the updated watchlist to local storage
     localStorage.setItem("watchlist", JSON.stringify(watchlist));
-
-    // Re-render the watchlist
     renderWatchlist();
 }
 
