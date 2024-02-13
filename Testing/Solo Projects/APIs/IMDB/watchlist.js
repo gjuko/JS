@@ -61,3 +61,4 @@ function removeFromWatchlist(title) {
 
 // Call renderWatchlist when the page is loaded
 window.addEventListener("load", renderWatchlist);
+

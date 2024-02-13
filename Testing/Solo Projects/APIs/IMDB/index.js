@@ -2,7 +2,6 @@ const searchBtn = document.getElementById("search-button");
 const searchField = document.getElementById("search-field");
 const notificationContainer = document.getElementById("notification-container");
 
-
 async function fetchMovieData(apiUrl) {
     try {
         const response = await fetch(apiUrl);
@@ -68,10 +67,6 @@ function renderMovie(movieData) {
     // Prepend the movie wrapper to the main movie container
     movieContainer.insertBefore(movieWrapper, movieContainer.firstChild);
 
-    // Add a horizontal rule after each movie container
-    const separator = document.createElement("hr");
-    movieContainer.insertBefore(separator, movieWrapper.nextSibling);
-
     // Add a click event listener to the "Add to Watchlist" button
     watchListButton.addEventListener("click", () => {
         // Extract movie information
@@ -86,21 +81,33 @@ function renderMovie(movieData) {
         };
 
         // Get the existing watchlist from local storage or initialize an empty array
-        const watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
+        let watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
 
-        // Add the current movie to the watchlist array
-        watchlist.push(movieInfo);
+        // Check if the movie is already in the watchlist
+        const movieIndex = watchlist.findIndex(movie => movie.title === movieInfo.title);
+        if (movieIndex === -1) {
+            // If the movie is not in the watchlist, add it
+            watchlist.push(movieInfo);
 
-        // Save the updated watchlist to local storage
-        localStorage.setItem("watchlist", JSON.stringify(watchlist));
+            // Save the updated watchlist to local storage
+            localStorage.setItem("watchlist", JSON.stringify(watchlist));
 
-        // Display a toast notification
-        const toastDetails = {
-            id: "success",
-            icon: "fa-check",
-            text: `${movieData.Title} has been added to your watchlist!`
-        };
-        createToast(toastDetails);
+            // Display a toast notification
+            const toastDetails = {
+                id: "success",
+                icon: "fa-check",
+                text: `${movieData.Title} has been added to your watchlist!`
+            };
+            createToast(toastDetails);
+        } else {
+            // If the movie is already in the watchlist, display a message
+            const toastDetails = {
+                id: "warning",
+                icon: "fa-exclamation-circle",
+                text: `${movieData.Title} is already in your watchlist!`
+            };
+            createToast(toastDetails);
+        }
     });
 }
 
@@ -139,5 +146,5 @@ const createToast = (details) => {
         setTimeout(() => {
             toast.remove();
         }, 1000); // Fade out transition duration
-    }, 4000); // 3 seconds
+    }, 3000); // 3 seconds
 };
