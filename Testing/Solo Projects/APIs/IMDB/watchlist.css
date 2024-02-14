@@ -1,3 +1,4 @@
+/* watchlist.css */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -25,27 +26,56 @@ header h1 {
 
 #topText {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px; /* Add margin between the top text and header */
+    justify-content: space-between; /* Spacing between elements */
+    align-items: center; /* Center vertically */
 }
 
-#myWatchlist {
-    color: lightskyblue !important;
-}
-
-
-
-#myWatchlist, #search-link {
-    color: #4CAF50; 
+a {
+    color: lightskyblue; 
     text-decoration: none;
+    margin-right: 225px;
     font-size: 18px;
 }
 
-#search-link {
+#myWatchlist, #topText, h1 {
+    color: #4CAF50; 
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+.watchlist-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#notification-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+.toast {
+    background-color: #222; /* Darker toast background color */
+    color: #fff; /* Light text color */
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.toast i {
     margin-right: 10px;
 }
 
+.toast span {
+    font-weight: bold;
+}
+
+/* Matching styles from index.css */
 .search {
     text-align: center;
     margin-bottom: 30px;
@@ -98,7 +128,7 @@ header h1 {
 }
 
 .add-to-watchlist-button, .watchlist-button, .remove-button {
-    background-color: #4CAF50;
+    background-color: #4CAF50; /* Accent color */
     color: #fff; /* Light text color */
     border: none;
     padding: 10px 20px;
@@ -109,31 +139,5 @@ header h1 {
 }
 
 .add-to-watchlist-button:hover, .watchlist-button:hover, .remove-button:hover {
-    background-color: lightskyblue;
-}
-
-#notification-container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-}
-
-.toast {
-    background-color: #222; /* Darker toast background color */
-    color: #fff; /* Light text color */
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    opacity: 1;
-    transition: opacity 1s ease-in-out;
-}
-
-.toast i {
-    margin-right: 10px;
-}
-
-.toast span {
-    font-weight: bold;
+    background-color: #45a049; /* Slightly lighter accent color on hover */
 }

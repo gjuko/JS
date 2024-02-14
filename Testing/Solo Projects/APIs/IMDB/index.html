@@ -1,19 +1,29 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Karla:wght@200;400;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="index.css">
-    </head>
-    <body>
-        <nav>
-            <h3>Movie search</h3>
-        </nav>
-        <form id="search">
-            <label for="searchField"></label>
-            <textarea id="searchField"></textarea>
-            <button id="btn-Search">Search</button>
-        </form>
-        <script src="index.js"></script>
-    </body>
-</html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="watchlist.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find your Film</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div id="topText">
+                <a href="/watchlist.html" id="myWatchlist">My Watchlist</a>
+                <a href="/index.html" id="search-link">Search for Movies</a>
+            </div>
+            <h1>Find your film</h1>
+        </header>
+        <div class="search">
+            <input type="text" id="search-field" placeholder="Enter movie title">
+            <button id="search-button">Search</button>
+        </div>
+        <div id="notification-container"></div>
+
+        <div id="movie-container"></div>
+        <div id="movie-poster"></div>
+    </div>
+    <script src="index.js"></script> <!-- Link to your JavaScript file -->
+</bod
