@@ -5,21 +5,17 @@ export default function Travel(props) {
   return (
 
  <div className="travel">
-
             <img src={`${props.item.imageUrl}`} className="travel--image" />
-            {/* <div className="card--stats">
-                <img src="../images/star.png" className="card--star" />
-                <span>{props.item.stats.rating}</span>
-                <span className="gray">({props.item.stats.reviewCount}) • </span>
-                <span>{props.item.title}</span>
-            </div> */}
-      
-            <p className="travel--location"><span className="bold">{props.item.location}</span></p>
-            <p className="travel--GPSLocation">{props.item.googleMapsUrl} View on Google Maps</p>
+         <div className="travel--stats">
+         <img className="Fill" src="./Fill.png"/>
+             <span className="travel--location"><span className="bold">{props.item.location}</span></span>
+            <span className="travel--GPSLocation"><a href={props.item.googleMapsUrl} target="_blank" rel="noopener noreferrer">Check it out on Google Maps</a></span>
             <h1 className="travel--title">{props.item.title}</h1>
             <h3 className="travel--startdate">{props.item.startDate} - {props.item.endDate}</h3>
             <p className="travel--desc">{props.item.description}</p>
+            <p className='line'></p>
+          </div>
+ 
         </div>
-
   )
 }

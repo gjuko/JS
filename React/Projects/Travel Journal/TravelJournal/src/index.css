@@ -1,4 +1,7 @@
-
+body {
+  overflow-x: hidden; 
+  overflow-y: hidden; 
+}
 nav {
   height: 60px;
   background-color: #F55A5A;
@@ -12,7 +15,6 @@ nav {
   color: azure;
   font-family: 'Inter';
   font-style: normal;
-  font-weight: 500;
   font-size: 14.4608px;
   line-height: 18px;
   letter-spacing: -0.075em;
@@ -21,3 +23,81 @@ nav {
 h1 {
   color: #F55A5A;
 }
+
+ .travel--image {
+      position:relative;
+      width: 200px;
+      height: 250px;
+      margin-right: 30px;
+      border-radius: 5px;
+}
+
+.Fill {
+  width: 10px;
+  margin-right: 10px;
+}
+
+
+.travel {
+  min-width: 100%;
+  width: 500;
+  height: 252px;
+  left: 40px;
+  top: 100px; 
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  margin-bottom: 80px;
+} 
+
+.travel--stats {
+  align-self: auto;
+    padding-top: 5px;
+    left: 39px;
+    height: 100px;
+    margin-right: 50px;
+} 
+
+
+
+.travel--location {
+  margin-right: 20px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 12px;
+  letter-spacing: 0.17em;
+  color: #2B283A;
+}
+
+
+.travel--title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 30px;
+    line-height: 30px;
+    color: #2B283A;
+}
+
+
+.travel--desc {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16.24px;
+  line-height: 150%;
+  color: #2B283A;
+  max-width: 400px;
+  /* You can also add overflow handling if needed */
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+
+.line {
+  border: 1px solid #F5F5F5;
+  margin-top: 70px;
+}
+
+
+
