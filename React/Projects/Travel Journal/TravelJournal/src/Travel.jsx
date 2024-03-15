@@ -4,6 +4,7 @@ export default function Travel(props) {
 
   return (
 
+
  <div className="travel">
             <img src={`${props.item.imageUrl}`} className="travel--image" />
          <div className="travel--stats">
@@ -15,7 +16,6 @@ export default function Travel(props) {
             <p className="travel--desc">{props.item.description}</p>
             <p className='line'></p>
           </div>
- 
         </div>
   )
 }

@@ -1,6 +1,8 @@
 body {
-  overflow-x: hidden; 
-  overflow-y: hidden; 
+  justify-content: center;
+  display: flex;
+  margin: 0;
+  padding: 0;
 }
 nav {
   height: 60px;
@@ -37,17 +39,25 @@ h1 {
   margin-right: 10px;
 }
 
+.Travel--Container {
+  background: rgb(213, 200, 53);
+  width: 500px;
+  height: 500px;
+}
+
 
 .travel {
+  /* background: rgb(213, 200, 53); */
   min-width: 100%;
   width: 500;
-  height: 252px;
+  height: 250px;
   left: 40px;
   top: 100px; 
   display: flex;
   flex-direction: row;
   position: relative;
   margin-bottom: 80px;
+ 
 } 
 
 .travel--stats {
@@ -88,16 +98,13 @@ h1 {
   font-size: 16.24px;
   line-height: 150%;
   color: #2B283A;
-  max-width: 400px;
-  /* You can also add overflow handling if needed */
+  max-width: 450px;
   overflow: hidden;
   text-overflow: ellipsis; 
+  overflow-x: hidden; 
+  overflow-y: hidden; 
 }
 
-.line {
-  border: 1px solid #F5F5F5;
-  margin-top: 70px;
-}
 
 
 
