@@ -113,7 +113,7 @@ function renderMovie(movieData) {
 
 async function searchAndRenderMovie(title) {
     if (title) {
-        const apiUrl = `https://www.omdbapi.com/?apikey=54847e20&t=${title}`;
+        const apiUrl = `http://www.omdbapi.com/?apikey=54847e20&t=${title}`;
         try {
             const data = await fetchMovieData(apiUrl);
             renderMovie(data);
