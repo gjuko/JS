@@ -1,9 +1,9 @@
-fetch("https://apis.scrimba.com/jsonplaceholder/posts")
+// Fetch posts from your Go backend
+fetch("http://localhost:8080/api/blogpost")
     .then(res => res.json())
-    .then(data => {
-        const postsArr = data.slice(0, 5)
+    .then(postsArr => {
         let html = ""
-        for (let post of postsArr) {
+        for (let post of postsArr.reverse()) {
             html += `
                 <h3>${post.title}</h3>
                 <p>${post.body}</p>
@@ -13,6 +13,7 @@ fetch("https://apis.scrimba.com/jsonplaceholder/posts")
         document.getElementById("blog-list").innerHTML = html
     })
 
+// Submit new post to your Go backend
 document.getElementById("new-post").addEventListener("submit", function(e) {
     e.preventDefault()
     const postTitle = document.getElementById("post-title").value
@@ -21,13 +22,15 @@ document.getElementById("new-post").addEventListener("submit", function(e) {
         title: postTitle,
         body: postBody
     }
-    /**
-     * Challenge: Send this off to the server!
-     * 
-     * 1. BaseURL: https://apis.scrimba.com/jsonplaceholder/
-     * 2. Endpoint: /posts
-     * 3. method: ???
-     * 4. Request body: ??? (Remember to turn it into JSON)
-     * 5. Headers: ??? (Check the JSON Placeholder API docs or past casts for help)
-     */
+    fetch("http://localhost:8080/api/blogpost", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    .then(() => {
+        // Optionally reload posts after adding
+        location.reload()
+    })
 })
